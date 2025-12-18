@@ -3,486 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvitaPro - Videos de Eventos Impactantes</title>
-	<link rel="stylesheet" href="css/style.css">
-    <!-- Carga de Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <title>InvitaPro | Invitaciones Digitales Next-Gen</title>
+    <link rel="stylesheet" href="css/estilos-general.css">
+    <!-- Fuentes: Inter para un look moderno y técnico, Syne para títulos audaces -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <!-- CABECERA Y NAVEGACIÓN (HEADER) -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo/Marca Estilizado: InvitaPro -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center space-x-2 text-3xl font-extrabold text-indigo-600 hover:text-indigo-800 transition duration-150">
-                        <!-- Ícono de Claqueta (Clapperboard) para simular producción de video -->
-                        <svg class="w-8 h-8 text-pink-500 shadow-md transform rotate-[-5deg]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 10.96V5a2 2 0 00-2-2H4a2 2 0 00-2 2v14a2 2 0 002 2h16a2 2 0 002-2v-5.96a1 1 0 00-2 0V19H4V5h16v5.96a1 1 0 002 0z"/>
-                            <path class="text-indigo-600" d="M11 6l1 2h-2l1-2zm3 0l1 2h-2l1-2zm-6 0l1 2h-2l1-2zm8 4l-1 2-2 1-1-2 2-1 2 2z"/>
-                        </svg>
-                        <span class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-500 shadow-lg">
-                            InvitaPro
-                        </span>
-                    </a>
-                </div>
+    <div class="menu-overlay" id="overlay"></div>
 
-                <!-- Menú Horizontal (Escritorio/Tablet) -->
-                <nav class="hidden md:flex md:space-x-8">
-                    <a href="#" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-150">Inicio</a>
-                    <a href="#" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-150">Servicios</a>
-                    <a href="#paquetes-servicio" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-150">Precios</a>
-                    <a href="#faq" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-150">FAQ</a>
-                    <a href="#" class="text-lg font-medium text-gray-700 hover:text-indigo-600 transition duration-150">Contacto</a>
-                </nav>
+    <header id="mainHeader">
+        <a href="#" class="logo">INVITA<span>PRO</span></a>
+        <nav class="nav-desktop">
+            <a href="#productos">Productos</a>
+            <a href="#galeria">Galería</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <button class="menu-btn" id="menuBtn">
+            <i data-lucide="align-right" size="32"></i>
+        </button>
 
-                <!-- Botón Hamburguesa (Móvil) - Activador del Drawer -->
-                <div class="md:hidden">
-                    <button id="menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
-                        <!-- Icono de 3 líneas (abierto) -->
-                        <svg id="icon-open" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                        <!-- Icono de X (cerrado) -->
-                        <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- El menú desplegable anterior ha sido eliminado de aquí -->
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="#productos">Productos</a>
+            <a href="#galeria">Galería</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">FAQ</a>
+        </nav>
     </header>
 
-    <!-- INICIO: Menú Lateral/Drawer (Aparece sobre el contenido, ocupa el 100% de la altura) -->
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Memories in <span>Motion.</span></h1>
+            <p>Diseño premium de invitaciones digitales para eventos que merecen ser recordados para siempre.</p>
+            <a href="#productos" class="btn-modern">Ver Catálogo <i data-lucide="arrow-down"></i></a>
+        </div>
+    </section>
 
-    <!-- Overlay para oscurecer el fondo cuando el menú está abierto -->
-    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[90] hidden opacity-0 drawer-backdrop md:hidden" aria-hidden="true"></div>
+    <!-- SECCIÓN PRODUCTOS -->
+    <section id="productos" class="bg-subtle">
+        <div class="section-title">
+            <h2>Nuestros <span>Productos</span></h2>
+            <p>Soluciones creativas para cada tipo de celebración.</p>
+        </div>
+        <div class="products-grid">
+            
+            <!-- Cumpleaños -->
+            <div class="product-category-card">
+                <h3><i data-lucide="cake"></i> Cumpleaños</h3>
+                <p class="description">Desde el primer añito hasta las décadas más importantes. Capturamos la esencia del festejado en cada frame.</p>
+                
+                <div class="dropdown">
+                    <div class="dropdown-trigger" onclick="toggleDropdown(this)">
+                        Infantil <i data-lucide="chevron-down" class="chevron" size="18"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item"><i data-lucide="baby"></i> Niño</div>
+                        <div class="dropdown-item"><i data-lucide="baby"></i> Niña</div>
+                    </div>
+                </div>
 
-    <!-- Menú Lateral/Drawer (Mobile) -->
-    <div id="mobile-menu" class="drawer-menu fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl z-[100] transform translate-x-full md:hidden">
-        
-        <!-- Contenedor Superior (Botón de Cierre) -->
-        <div class="flex justify-between items-center p-4 border-b border-gray-100">
-             <h3 class="text-xl font-bold text-indigo-600">Navegación</h3>
-            <button id="close-menu-button" type="button" class="text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition duration-150">
-                <!-- Icono de X -->
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
+                <div class="dropdown">
+                    <div class="dropdown-trigger" onclick="toggleDropdown(this)">
+                        Adulto <i data-lucide="chevron-down" class="chevron" size="18"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item"><i data-lucide="user"></i> Hombre</div>
+                        <div class="dropdown-item"><i data-lucide="user"></i> Mujer</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aniversario -->
+            <div class="product-category-card">
+                <h3><i data-lucide="heart"></i> Aniversario</h3>
+                <p class="description">Celebren el tiempo juntos con piezas audiovisuales elegantes y emotivas que lleguen al corazón.</p>
+                
+                <div class="dropdown">
+                    <div class="dropdown-trigger" onclick="toggleDropdown(this)">
+                        Opciones de Evento <i data-lucide="chevron-down" class="chevron" size="18"></i>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="dropdown-item"><i data-lucide="church"></i> Iglesia</div>
+                        <div class="dropdown-item"><i data-lucide="music"></i> Grupos Musicales</div>
+                        <div class="dropdown-item"><i data-lucide="calendar"></i> Otros Eventos</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fiesta de 15 -->
+            <div class="product-category-card" style="border: 2px solid var(--primary); background: linear-gradient(145deg, var(--bg-card), #161025);">
+                <div style="position: absolute; top: -15px; right: 20px; background: var(--primary); color: white; padding: 4px 15px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; letter-spacing: 1px;">ESPECIAL</div>
+                <h3><i data-lucide="sparkles" style="color: var(--primary);"></i> Fiesta de 15</h3>
+                <p class="description">La noche más soñada merece una invitación a la altura. Diseños sofisticados, mágicos y totalmente personalizados.</p>
+                <a href="#productos" class="btn-modern" style="width: 100%; justify-content: center; margin-top: auto;">Consultar Colección</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA DE MUESTRAS -->
+    <section id="galeria">
+        <div class="section-title">
+            <h2>Galería de <span>Muestras</span></h2>
+            <p>Invitaciones infantiles listas para adquirir y personalizar ahora mismo.</p>
+        </div>
+        <div class="gallery-grid">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-overlay"><i data-lucide="play" fill="white" size="18"></i></div>
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&auto=format&fit=crop&q=60" style="width:100%; height:100%; opacity:0.3; object-fit:cover;" alt="Superhéroes Preview">
+                </div>
+                <div class="video-info">
+                    <h4>Mundo Superhéroes</h4>
+                    <span class="price">$4.500 ARS</span>
+                    <a href="https://wa.me/5493735460477?text=Hola! Me interesa la invitación de Mundo Superhéroes" class="btn-buy" target="_blank">Adquirir</a>
+                </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-overlay"><i data-lucide="play" fill="white" size="18"></i></div>
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&auto=format&fit=crop&q=60" style="width:100%; height:100%; opacity:0.3; object-fit:cover;" alt="Princess Preview">
+                </div>
+                <div class="video-info">
+                    <h4>Cuento de Hadas</h4>
+                    <span class="price">$4.500 ARS</span>
+                    <a href="https://wa.me/5493735460477?text=Hola! Me interesa la invitación de Cuento de Hadas" class="btn-buy" target="_blank">Adquirir</a>
+                </div>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-overlay"><i data-lucide="play" fill="white" size="18"></i></div>
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&auto=format&fit=crop&q=60" style="width:100%; height:100%; opacity:0.3; object-fit:cover;" alt="Space Preview">
+                </div>
+                <div class="video-info">
+                    <h4>Misión Espacial</h4>
+                    <span class="price">$4.500 ARS</span>
+                    <a href="https://wa.me/5493735460477?text=Hola! Me interesa la invitación de Misión Espacial" class="btn-buy" target="_blank">Adquirir</a>
+                </div>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-overlay"><i data-lucide="play" fill="white" size="18"></i></div>
+                    <img src="https://images.unsplash.com/photo-1547407139-3c921a66005c?w=400&auto=format&fit=crop&q=60" style="width:100%; height:100%; opacity:0.3; object-fit:cover;" alt="Safari Preview">
+                </div>
+                <div class="video-info">
+                    <h4>Aventura Safari</h4>
+                    <span class="price">$4.500 ARS</span>
+                    <a href="https://wa.me/5493735460477?text=Hola! Me interesa la invitación de Aventura Safari" class="btn-buy" target="_blank">Adquirir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section id="testimonios" class="bg-subtle">
+        <div class="section-title">
+            <h2>Nuestros <span>Clientes</span></h2>
+            <p>Conoce la experiencia de quienes ya confiaron en nosotros.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars"><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i></div>
+                <p>"La invitación de 15 de mi hija fue furor en WhatsApp. La calidad del video es impresionante, muy superior a lo que vi en otros lados."</p>
+                <div class="client-info">
+                    <div class="client-avatar"></div>
+                    <div><strong>Marcela G.</strong><br><small style="color:var(--text-dim)">Madre de Quinceañera</small></div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars"><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i></div>
+                <p>"Compré una muestra lista para usar de Superhéroes y me la entregaron personalizada en menos de 24 horas. ¡Excelente servicio!"</p>
+                <div class="client-info">
+                    <div class="client-avatar"></div>
+                    <div><strong>Ricardo P.</strong><br><small style="color:var(--text-dim)">Padre de Familia</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+    <section id="faq">
+        <div class="section-title">
+            <h2>Preguntas <span>Frecuentes</span></h2>
+            <p>Todo lo que necesitas saber sobre nuestras invitaciones digitales.</p>
         </div>
         
-        <!-- Links de Navegación -->
-        <nav class="p-4 space-y-2">
-            <a href="#" class="block px-3 py-3 rounded-xl text-lg font-semibold text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition duration-150">
-                <span class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"></path></svg>Inicio</span>
-            </a>
-            <a href="#" class="block px-3 py-3 rounded-xl text-lg font-semibold text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition duration-150">
-                <span class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6h6m6-6h6m0 0a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6h-6m-6 6h6m6 0a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6h-6m-6 6h6"></path></svg>Servicios</span>
-            </a>
-            <a href="#paquetes-servicio" class="block px-3 py-3 rounded-xl text-lg font-semibold text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition duration-150">
-                <span class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>Precios</span>
-            </a>
-            <a href="#faq" class="block px-3 py-3 rounded-xl text-lg font-semibold text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition duration-150">
-                <span class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9.247a1 1 0 011.026-.01l2.5 1.5a1 1 0 001.026 0l2.5-1.5a1 1 0 111.026 1.714l-2.5 1.5a1 1 0 01-1.026 0l-2.5-1.5a1 1 0 01-1.026-1.714zM8.228 14.247a1 1 0 011.026-.01l2.5 1.5a1 1 0 001.026 0l2.5-1.5a1 1 0 111.026 1.714l-2.5 1.5a1 1 0 01-1.026 0l-2.5-1.5a1 1 0 01-1.026-1.714z"></path></svg>FAQ</span>
-            </a>
-            <a href="#" class="block px-3 py-3 rounded-xl text-lg font-semibold text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 transition duration-150">
-                <span class="flex items-center"><svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.842 5.228a2 2 0 002.316 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>Contacto</span>
-            </a>
-        </nav>
-        
-        <!-- Botón de Acción en el menú lateral -->
-        <div class="p-4 mt-4">
-            <a href="#paquetes-servicio" class="w-full inline-block text-center py-3 bg-pink-500 text-white font-bold rounded-xl shadow-lg hover:bg-pink-600 transition duration-300 transform hover:scale-[1.01]">
-                Pedir Video Ahora
-            </a>
-        </div>
-        
-        <!-- Branding al pie del menú -->
-        <div class="absolute bottom-0 left-0 right-0 p-4 text-center text-sm text-gray-400">
-            <p>&copy; InvitaPro 2024</p>
-        </div>
-    </div>
-    <!-- FIN: Menú Lateral/Drawer -->
-    
-    <!-- CONTENIDO PRINCIPAL (MAIN CONTENT) -->
-    <main class="max-w-6xl mx-auto p-4 md:p-8">
-
-        <!-- Sección Hero: Edición de Video Invitaciones -->
-        <section class="text-center py-20 bg-indigo-600 text-white rounded-2xl shadow-2xl">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-                Invitaciones en Video: ¡Impacto Digital Asegurado!
-            </h1>
-            <p class="text-xl sm:text-2xl font-light mb-8 max-w-3xl mx-auto opacity-90">
-                Creamos videos dinámicos y emocionantes, perfectos para compartir en redes sociales o estados de WhatsApp. Tu evento comienza antes de que llegue la fecha.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#paquetes-servicio" class="btn-link px-8 py-3 bg-pink-500 text-white font-bold rounded-xl shadow-lg hover:bg-pink-600 transition duration-300 transform hover:scale-105">
-                    Pedir video
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección de Servicios (¿Cómo Funciona?) -->
-        <section class="mt-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Nuestro Proceso Creativo</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Paso 1: Cuéntanos tu Historia -->
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-xl shadow-lg border-b-4 border-indigo-400 transform transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-indigo-100 rounded-full text-indigo-600 text-3xl font-extrabold">1</div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Cómo empezar el pedido?</h3>
-                    <p class="text-gray-600">Nos cuentas el tema, estilo, y los detalles clave de tu evento. Definimos la música, los colores y el tono.</p>
-                </div>
-                
-                <!-- Paso 2: Edición y Diseño -->
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-xl shadow-lg border-b-4 border-pink-400 transform transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-pink-100 rounded-full text-pink-600 text-3xl font-extrabold">2</div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Producción Digital</h3>
-                    <p class="text-gray-600">Comenzamos la edición. Animación de textos, transiciones suaves y optimización para el formato vertical (9:16) móvil.</p>
-                </div>
-
-                <!-- Paso 3: Entrega y Compartición -->
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-xl shadow-lg border-b-4 border-green-400 transform transition duration-300 hover:shadow-xl hover:translate-y-[-5px]">
-                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-green-100 rounded-full text-green-600 text-3xl font-extrabold">3</div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Resultado Final</h3>
-                    <p class="text-gray-600">Recibes tu video en alta calidad, listo para subir a WhatsApp, Instagram Stories, TikTok o cualquier plataforma.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección: Motivos de Invitación (Cards) -->
-        <section class="mt-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Porfavor elige el motivo de la invitavión</h2>
-            
-            <!-- Contenedor Grid para 2 filas en PC/Tablet y 4 tarjetas en móvil -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Tarjeta 1: Cumpleaños -->
-                <div class="card-category bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500 flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-yellow-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.546c-.524 0-1.042.13-1.54 1.488-1.898 4.418-5.327 7.2-9.288 7.2-3.6 0-6.573-2.274-8.498-5.319l-.7-2.327L12 4v4m9-4v4m0 0l-3-3m3 3L18 7m-3 10a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Cumpleaños</h3>
-                    <p class="text-gray-600 text-sm">Videos llenos de alegría y energía para celebrar cualquier edad, desde fiestas infantiles hasta grandes aniversarios.</p>
-                </div>
-                
-                <!-- Tarjeta 2: Eventos Grandes -->
-                <div class="card-category bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500 flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-2a3 3 0 013-3h3a3 3 0 013 3v2"></path></svg>
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Eventos Grandes</h3>
-                    <p class="text-gray-600 text-sm">Soluciones de vídeo corporativo, galas, o inauguraciones que requieren un toque profesional y gran impacto.</p>
-                </div>
-
-                <!-- Tarjeta 3: Bodas & Aniversarios -->
-                <div class="card-category bg-white p-6 rounded-xl shadow-lg border-t-4 border-pink-500 flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-pink-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21.5c-4.5 0-8-2-8-6s3.5-6 8-6 8 2 8 6-3.5 6-8 6zM12 11a3 3 0 100-6 3 3 0 000 6zM2 13v6a2 2 0 002 2h16a2 2 0 002-2v-6"></path></svg>
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Bodas & Aniversarios</h3>
-                    <p class="text-gray-600 text-sm">Invitaciones con diseño elegante y emotivo, perfectas para anunciar el gran día con estilo y distinción.</p>
-                </div>
-
-                <!-- Tarjeta 4: Quinceañeras & Bautizos -->
-                <div class="card-category bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Eventos Especiales</h3>
-                    <p class="text-gray-600 text-sm">Diseños temáticos para graduaciones, baby showers, quinceañeras o cualquier hito familiar importante.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- INICIO: Sección Paquetes de Servicio y Precios (CARRUSEL) -->
-        <section id="paquetes-servicio" class="mt-16 py-10">
-            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Elige el Paquete de Edición Perfecto</h2>
-
-            <!-- Carrusel de Precios -->
-            <div class="flex space-x-6 overflow-x-auto p-4 snap-x snap-mandatory no-scrollbar lg:justify-center lg:space-x-10">
-                
-                <!-- Paquete Básico -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white flex flex-col p-6 rounded-xl border-2 border-gray-200 hover:border-indigo-400 transition duration-300 shadow-lg">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Básico</h3>
-                    <p class="text-gray-500 mb-4">Ideal para anuncios sencillos y rápidos.</p>
-                    <div class="text-5xl font-extrabold text-indigo-600 mb-6">
-                        $29<span class="text-xl font-medium text-gray-500"> USD</span>
-                    </div>
-                    <ul class="space-y-3 text-gray-600 flex-grow">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Edición de hasta 30 segundos.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Tiempo de entrega: 24-48 horas.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            **1 ronda de revisión** incluida.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Música de librería libre de derechos.
-                        </li>
-                    </ul>
-                    <button class="w-full mt-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.01]">
-                        Elegir Básico
-                    </button>
-                </div>
-
-                <!-- Paquete Estándar (Destacado) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-pink-50 flex flex-col p-8 rounded-xl border-4 border-pink-500 shadow-2xl scale-[1.03] transition duration-300">
-                    <span class="text-center text-sm font-bold text-white bg-pink-500 rounded-full py-1 px-4 mb-3 self-center shadow-md">RECOMENDADO</span>
-                    <h3 class="text-3xl font-bold text-gray-800 mb-2">Estándar</h3>
-                    <p class="text-gray-500 mb-4">El equilibrio perfecto entre calidad y velocidad.</p>
-                    <div class="text-6xl font-extrabold text-pink-600 mb-6">
-                        $59<span class="text-xl font-medium text-gray-500"> USD</span>
-                    </div>
-                    <ul class="space-y-3 text-gray-600 flex-grow">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Edición de hasta 60 segundos.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Tiempo de entrega: 24 horas.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            **2 rondas de revisión** incluidas.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Música personalizada (cliente) o de librería.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-pink-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Efectos de sonido (SFX) sutiles.
-                        </li>
-                    </ul>
-                    <button class="w-full mt-6 py-3 bg-pink-500 text-white font-bold rounded-xl shadow-xl hover:bg-pink-600 transition duration-300 transform hover:scale-[1.01]">
-                        Elegir Estándar
-                    </button>
-                </div>
-
-                <!-- Paquete Pro -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white flex flex-col p-6 rounded-xl border-2 border-gray-200 hover:border-indigo-400 transition duration-300 shadow-lg">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Pro</h3>
-                    <p class="text-gray-500 mb-4">Máxima prioridad y diseño sin límites.</p>
-                    <div class="text-5xl font-extrabold text-indigo-600 mb-6">
-                        $99<span class="text-xl font-medium text-gray-500"> USD</span>
-                    </div>
-                    <ul class="space-y-3 text-gray-600 flex-grow">
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Edición de hasta 90 segundos.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Tiempo de entrega **Express 12 horas**.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            **Revisiones Ilimitadas**.
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-indigo-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Diseño 100% personalizado y avanzado.
-                        </li>
-                    </ul>
-                    <button class="w-full mt-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-[1.01]">
-                        Elegir Pro
-                    </button>
-                </div>
-
-            </div>
-        </section>
-        <!-- FIN: Sección Paquetes de Servicio y Precios (CARRUSEL) -->
-
-        <!-- Sección: Carrusel de Videos Listos (COMPRA INMEDIATA) -->
-        <section class="mt-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Videos Listos para Ti</h2>
-            <p class="text-center text-lg text-gray-600 mb-8">Elige entre nuestros diseños más populares, listos para personalizar con tus datos.</p>
-
-            <!-- Carrusel Horizontal -->
-            <div class="flex space-x-6 overflow-x-auto p-4 snap-x snap-mandatory no-scrollbar">
-                
-                <!-- Tarjeta de Video 1 (Cumpleaños) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/300x500/A0B2C9/FFFFFF?text=Cumpleaños+V1" alt="Video de Invitación de Cumpleaños" class="w-full h-auto object-cover rounded-t-xl">
-                    <div class="p-4 text-center">
-                        <h4 class="font-bold text-lg text-gray-800">Modelo "Fiesta Neón"</h4>
-                        <p class="text-sm text-gray-500 mb-4">Animación rápida y vibrante.</p>
-                        <button class="w-full py-2 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition duration-200">
-                            Comprar Ahora ($15 USD)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Video 2 (Boda Clásica) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/300x500/C9A0B2/FFFFFF?text=Boda+Clásica+V2" alt="Video de Invitación de Boda Clásica" class="w-full h-auto object-cover rounded-t-xl">
-                    <div class="p-4 text-center">
-                        <h4 class="font-bold text-lg text-gray-800">Modelo "Elegancia Floral"</h4>
-                        <p class="text-sm text-gray-500 mb-4">Transiciones lentas y tipografía cursiva.</p>
-                        <button class="w-full py-2 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition duration-200">
-                            Comprar Ahora ($25 USD)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Video 3 (Fiesta) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/300x500/B2C9A0/FFFFFF?text=Fiesta+Verano+V3" alt="Video de Invitación de Fiesta de Verano" class="w-full h-auto object-cover rounded-t-xl">
-                    <div class="p-4 text-center">
-                        <h4 class="font-bold text-lg text-gray-800">Modelo "Sunset Chill"</h4>
-                        <p class="text-sm text-gray-500 mb-4">Ideal para piscinadas o barbacoas.</p>
-                        <button class="w-full py-2 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition duration-200">
-                            Comprar Ahora ($12 USD)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Video 4 (Evento Empresarial) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/300x500/A0B2C9/FFFFFF?text=Evento+Corp+V4" alt="Video de Invitación de Evento Corporativo" class="w-full h-auto object-cover rounded-t-xl">
-                    <div class="p-4 text-center">
-                        <h4 class="font-bold text-lg text-gray-800">Modelo "Lanzamiento Pro"</h4>
-                        <p class="text-sm text-gray-500 mb-4">Serio y profesional, con gráficos.</p>
-                        <button class="w-full py-2 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition duration-200">
-                            Comprar Ahora ($30 USD)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tarjeta de Video 5 (Quinceañera) -->
-                <div class="flex-shrink-0 w-[300px] snap-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300">
-                    <img src="https://placehold.co/300x500/C9A0B2/FFFFFF?text=Quince+Romance+V5" alt="Video de Invitación de Quinceañera" class="w-full h-auto object-cover rounded-t-xl">
-                    <div class="p-4 text-center">
-                        <h4 class="font-bold text-lg text-gray-800">Modelo "Romantic Dream"</h4>
-                        <p class="text-sm text-gray-500 mb-4">Tonos pasteles y efectos de cuento de hadas.</p>
-                        <button class="w-full py-2 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition duration-200">
-                            Comprar Ahora ($20 USD)
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-            
-            <!-- Botón "Ver más videos" centrado -->
-            <div class="mt-8 text-center">
-                <button class="btn-link px-10 py-3 bg-gray-200 text-gray-800 font-semibold rounded-xl border-2 border-gray-300 hover:bg-gray-300 transition duration-300 transform hover:scale-105">
-                    Ver más videos listos (Portafolio completo)
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    ¿Cómo recibo mi invitación final?
+                    <span class="faq-icon"><i data-lucide="plus" size="16"></i></span>
                 </button>
-            </div>
-        </section>
-        
-        <!-- INICIO Sección: Preguntas Frecuentes (FAQ) -->
-        <section id="faq" class="mt-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Preguntas Frecuentes (FAQ)</h2>
-
-            <div class="max-w-3xl mx-auto space-y-4">
-                
-                <!-- Pregunta 1: Tiempo de edición -->
-                <div class="faq-item bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none">
-                        <span>¿Cuánto tiempo tarda en editar mi video?</span>
-                        <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-answer pt-4 text-gray-600">
-                        <p>Nuestro tiempo de entrega varía según el paquete de edición que elijas:</p>
-                        <ul class="list-disc list-inside mt-2 ml-4">
-                            <li>**Paquetes Básico y Estándar:** Entrega en **24 a 48 horas** hábiles.</li>
-                            <li>**Paquete Pro:** Servicio **Express de 12 horas** hábiles.</li>
-                        </ul>
-                        <p class="mt-2">El conteo inicia una vez que se recibe todo el material y los datos necesarios.</p>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Te enviamos un archivo de video en alta resolución optimizado para WhatsApp y redes sociales, junto con un enlace único si tu invitación incluye funciones interactivas.
                     </div>
                 </div>
+            </div>
 
-                <!-- Pregunta 2: Revisiones -->
-                <div class="faq-item bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none">
-                        <span>¿Cuántas revisiones de video están incluidas en mi compra?</span>
-                        <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-answer pt-4 text-gray-600">
-                        <p>Ofrecemos las siguientes rondas de revisión gratuitas para asegurar tu satisfacción:</p>
-                        <ul class="list-disc list-inside mt-2 ml-4">
-                            <li>**Paquete Básico:** 1 ronda de revisión.</li>
-                            <li>**Paquete Estándar:** 2 rondas de revisión.</li>
-                            <li>**Paquete Pro:** Revisiones Ilimitadas.</li>
-                        </ul>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    ¿Cuánto tiempo tarda la entrega?
+                    <span class="faq-icon"><i data-lucide="plus" size="16"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Muestras prediseñadas: 24 a 48 horas. Personalizados (15 años/Bodas): 5 a 7 días hábiles.
                     </div>
                 </div>
-                
-                <!-- Pregunta 3: Formato -->
-                <div class="faq-item bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
-                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg text-gray-800 focus:outline-none">
-                        <span>¿En qué formato y resolución se entregan los videos?</span>
-                        <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="faq-answer pt-4 text-gray-600">
-                        <p>Todos los videos se entregan en formato MP4 de alta calidad (Full HD 1080p o 4K, según el material de origen) y se optimizan para el formato vertical (9:16), ideal para historias de Instagram, TikTok y estados de WhatsApp.</p>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer Optimizado -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">INVITA<span>PRO</span></a>
+                <p>Expertos en diseño audiovisual e invitaciones inteligentes para los momentos que importan.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram" size="20"></i></a>
+                    <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook" size="20"></i></a>
+                    <a href="#" class="social-icon" aria-label="YouTube"><i data-lucide="youtube" size="20"></i></a>
+                </div>
             </div>
-        </section>
-        <!-- FIN Sección: Preguntas Frecuentes (FAQ) -->
 
-    </main>
-    
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer class="bg-gray-800 mt-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-300">
-                
-                <!-- Columna 1: Branding -->
-                <div>
-                    <h4 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-pink-400 mb-4">InvitaPro</h4>
-                    <p class="text-sm">Creamos invitaciones en video que marcan la diferencia. Impacta a tus invitados antes del gran evento.</p>
-                </div>
-                
-                <!-- Columna 2: Navegación -->
-                <div>
-                    <h4 class="text-xl font-semibold text-white mb-4">Enlaces Rápidos</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Inicio</a></li>
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Servicios</a></li>
-                        <li><a href="#paquetes-servicio" class="hover:text-pink-400 transition duration-150">Precios</a></li>
-                        <li><a href="#faq" class="hover:text-pink-400 transition duration-150">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Columna 3: Servicios -->
-                <div>
-                    <h4 class="text-xl font-semibold text-white mb-4">Eventos</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Bodas & Aniversarios</a></li>
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Cumpleaños</a></li>
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Eventos Corporativos</a></li>
-                        <li><a href="#" class="hover:text-pink-400 transition duration-150">Eventos Especiales</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Columna 4: Contacto -->
-                <div>
-                    <h4 class="text-xl font-semibold text-white mb-4">Contáctanos</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.842 5.228a2 2 0 002.316 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>info@invitapro.com</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 mr-2 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+1 (555) 123-4567</li>
-                    </ul>
-                </div>
-                
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#testimonios">Clientes</a></li>
+                    <li><a href="#faq">Ayuda (FAQ)</a></li>
+                </ul>
             </div>
-            
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
-                <p>&copy; 2024 InvitaPro. Todos los derechos reservados. Diseño con amor y video.</p>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                </ul>
             </div>
+
+            <div class="footer-links">
+                <h4>Ubicación</h4>
+                <p style="color:var(--text-dim); font-size:0.9rem; text-align: inherit;">
+                    Buenos Aires, Argentina<br>
+                    Envíos a todo el mundo.<br><br>
+                    <strong>hola@invitapro.studio</strong>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 InvitaPro Studio. Todos los derechos reservados.
         </div>
     </footer>
 
-<script src="js/main.js"></script>
+    <!-- WhatsApp Floating con Icono Original y Tu Número -->
+    <a href="https://wa.me/5493735460477" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.1 0-65.6-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.1-3.2-5.5-.3-8.5 2.5-11.2 2.5-2.5 5.5-6.5 8.3-9.7 2.8-3.2 3.7-5.5 5.6-9.2 1.9-3.7 1-7-1-9.7-1-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+        </svg>
+    </a>
+<script src="js/script.js"></script>
 </body>
 </html>
