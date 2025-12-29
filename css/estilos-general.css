@@ -1,124 +1,204 @@
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-        :root {
-            --canva-purple: #7d2ae8;
-            --canva-blue: #00c4cc;
-            --canva-gradient: linear-gradient(135deg, #7d2ae8 0%, #00c4cc 100%);
-            --whatsapp-green: #25D366;
-            --dark-bg: #0f111a;
-        }
+:root {
+    --canva-purple: #7d2ae8;
+    --canva-blue: #00c4cc;
+    --canva-gradient: linear-gradient(135deg, #7d2ae8 0%, #00c4cc 100%);
+    --whatsapp-green: #25D366;
+    --dark-bg: #0f111a;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    overflow-x: hidden;
+}
 
-        .text-gradient {
-            background: var(--canva-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+text-gradient {
+    background: var(--canva-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .bg-gradient-canva {
-            background: var(--canva-gradient);
-        }
+.box-icon {
+    background: var(--canva-gradient);
+}
 
-        .glass-ui {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
+.glass-ui {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-        .btn-creative {
-            background: var(--canva-gradient);
-            color: white;
-            font-weight: 700;
-            border-radius: 12px;
-            padding: 12px 24px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 15px rgba(125, 42, 232, 0.3);
-            cursor: pointer;
-        }
+.btn-creative {
+    background: var(--canva-gradient);
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(125, 42, 232, 0.3);
+    cursor: pointer;
+}
 
         /* Lógica de Desplegables Multinivel */
-        .content-level-1, .content-level-2 {
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0;
-        }
+.content-level-1, .content-level-2 {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
 
-        .item-level-1.active > .content-level-1 {
-            max-height: 1000px;
-            opacity: 1;
-            padding-top: 1.5rem;
-        }
+.item-level-1.active > .content-level-1 {
+    max-height: 1000px;
+    opacity: 1;
+    padding-top: 1.5rem;
+}
 
-        .item-level-2.active > .content-level-2 {
-            max-height: 500px;
-            opacity: 1;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
+.item-level-2.active > .content-level-2 {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
 
-        .rotate-icon {
-            transition: transform 0.4s ease;
-        }
-        .active > div > .rotate-icon {
-            transform: rotate(180deg);
-        }
+.rotate-icon {
+    transition: transform 0.4s ease;
+}
+.active > div > .rotate-icon {
+    transform: rotate(180deg);
+}
 
-        .aspect-3-4 {
-            aspect-ratio: 3 / 4;
-        }
+.aspect-3-4 {
+    aspect-ratio: 3 / 4;
+}
 
-        .nav-editor {
-            background: rgba(15, 17, 26, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+.nav-editor {
+    background: rgba(15, 17, 26, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-        #mobile-menu-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-        }
-        #mobile-menu-overlay.open { opacity: 1; visibility: visible; }
-        #mobile-menu-content {
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateX(100%);
-        }
-        #mobile-menu-overlay.open #mobile-menu-content { transform: translateX(0); }
+#mobile-menu-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+#mobile-menu-overlay.open { opacity: 1; visibility: visible; }
+#mobile-menu-content {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
+}
+#mobile-menu-overlay.open #mobile-menu-content { transform: translateX(0); }
 
         /*Seccion whatsapp flotante*/
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 100;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .whatsapp-float.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .whatsapp-ping {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: var(--whatsapp-green);
-            opacity: 0.6;
-            animation: ping-pulse 1.5s infinite;
-        }
-        @keyframes ping-pulse { 75%, 100% { transform: scale(1.8); opacity: 0; } }
-        .faq-item.active .faq-answer {
-            display: block;
-        }
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.whatsapp-float.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.whatsapp-ping {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--whatsapp-green);
+    opacity: 0.6;
+    animation: ping-pulse 1.5s infinite;
+}
+@keyframes ping-pulse { 75%, 100% { transform: scale(1.8); opacity: 0; } }
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* 📱 Tablet */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .btn-creative {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  .glass-ui {
+    border-radius: 16px;
+    padding: 16px;
+  }
+}
+
+/* 📱 Celular */
+@media (max-width: 480px) {
+  h1{ /*TITULO PRINCIPAL*/
+    
+    padding: 158px 7px 28px 7px;
+    font-size: 1.5rem;
+  }
+  .text-gradient { /*COLOR DEGRADADO DEL TITULO PRINCIPAL*/
+    background: var(--canva-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+  .box-icon{
+    background: black;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+
+  }
+  .text-xl{
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .text-xll{ /*PARRAFO DEL TITULO PRINCIPAL*/
+    padding: 0 7px 12px 7px;
+    font-size: 18px;
+    font-weight: 450;
+    letter-spacing: 1px;
+  }
+  .text-wa{
+    color: #25d366;
+  }
+  .text-fb{
+    color: #3582d8;
+  }
+  .text-insta{
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .btn-creative { 
+    padding: 18px 16px;
+    margin: 18px 18px 0 18px;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+  }
+  .border {
+    margin: 0 17px 0 17px;    
+    font-size: 1.2rem;    
+    letter-spacing: 1.5px;
+  }
+  .card, .glass-ui {
+    width: 100%;
+    border-radius: 22px;
+    padding: 12px;
+  }
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+

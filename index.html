@@ -8,9 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 </head>
-<body>
 
-    <!-- WhatsApp -->
+
+<body>
+                                                    <!-- WhatsApp -->
+
     <a href="https://wa.me/5493735460477" target="_blank" id="whatsapp-btn" class="whatsapp-float">
         <div class="whatsapp-ping"></div>
         <div class="relative w-[60px] h-[60px] bg-[#25D366] rounded-full flex items-center justify-center shadow-xl">
@@ -20,18 +22,21 @@
         </div>
     </a>
 
-    <!-- Header -->
+                                                    <!-- Header -->
+
     <header class="fixed w-full top-0 z-[60] nav-editor">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-canva rounded-xl flex items-center justify-center font-bold text-white text-xl">DM</div>
+                <div class="w-10 h-10 box-icon rounded-xl flex items-center justify-center font-bold text-white text-xl">
+                    <img class="icons-img" src="icons/DigitalMay.png" alt="">
+                </div>
                 <span class="text-xl font-extrabold tracking-tight">Digital<span class="text-gradient">May</span></span>
             </div>
             <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
                 <a href="#inicio" class="text-gray-400 hover:text-white transition">Inicio</a>
-                <a href="#coleccion" class="text-gray-400 hover:text-white transition">Colecciones</a>
-                <a href="#testimonios" class="text-gray-400 hover:text-white transition">Testimonios</a>
-                <a href="#faq" class="text-gray-400 hover:text-white transition">FAQ</a>
+                <a href="#selector-invitaciones" class="text-gray-400 hover:text-white transition">Invitación</a>
+                <a href="#testimonios" class="text-gray-400 hover:text-white transition">Opiniones</a>
+                <a href="#faq" class="text-gray-400 hover:text-white transition">Preguntas</a>
                 <a href="#coleccion" class="btn-creative text-sm">Crear Invitación</a>
             </nav>
             <button id="menu-btn" class="md:hidden text-white p-2">
@@ -40,7 +45,8 @@
         </div>
     </header>
 
-    <!-- Menú Móvil con fondo interactivo y botón de cierre -->
+                                <!-- Menú Móvil con fondo interactivo y botón de cierre -->
+
     <div id="mobile-menu-overlay" class="fixed inset-0 z-[65] bg-black/70 backdrop-blur-sm md:hidden">
         <div id="mobile-menu-content" class="absolute right-0 top-0 h-full bg-[#0f111a] w-3/4 p-8 flex flex-col pt-24 shadow-2xl justify-between">
             <!-- Botón de Cerrar (X) -->
@@ -50,13 +56,14 @@
 
             <nav class="flex flex-col space-y-6 text-xl font-bold">
                 <a href="#inicio" class="mobile-link text-gray-400 hover:text-white transition-colors">Inicio</a>
-                <a href="#coleccion" class="mobile-link text-gray-400 hover:text-white transition-colors">Colecciones</a>
+                <a href="#selector-invitaciones" class="mobile-link text-gray-400 hover:text-white transition-colors">Invitación</a>
                 <a href="#testimonios" class="mobile-link text-gray-400 hover:text-white transition-colors">Opiniones</a>
-                <a href="#faq" class="mobile-link text-gray-400 hover:text-white transition-colors">Preguntas Frecuentes</a>
+                <a href="#faq" class="mobile-link text-gray-400 hover:text-white transition-colors">Preguntas</a>
                 <a href="#" class="btn-creative text-center mt-4">Crear Invitación</a>
             </nav>
 
-            <!-- Footer Menú Lateral -->
+                                                <!-- Footer Menú Lateral -->
+
             <div class="border-t border-white/10 pt-6 pb-4">
                 <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-4 text-center">DigitalMay Creative Studio</p>
                 <div class="flex justify-center gap-6 text-gray-400">
@@ -67,30 +74,32 @@
         </div>
     </div>
 
-    <!-- Hero -->
-    <section id="inicio" class="relative min-h-screen flex items-center pt-24">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-tight tracking-tighter">
-                <span class="text-gradient">Texto aquí </span>Texto aquí
+                                            <!-- Hero              PORTADA    PORTADA     PORTADA  -->
+
+    <section id="inicio" class="relative min-h-screen flex items-center pt-54">
+        <div class="container mx-auto px-0 text-center">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 leading-tight tracking-tighter">
+                <span class="text-gradient">INVITACIONES </span> VIRTUALES!
             </h1>
-            <p class="text-xl text-gray-500 mb-12 font-medium max-w-2xl mx-auto">
-                Invitaciones digitales interactivas con estilo profesional y creativo.
+            <p class="text-xll text-gray-500 mb-12 font-medium max-w-2xl mx-auto">
+                Te ayudamos a crear tu invitación para compartir en <span class="text-wa">whatsapp</span>, <span class="text-fb">facebook</span> o <span class="text-insta">instagram</span>.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#coleccion" class="btn-creative py-4 px-10">Comenzar con la Invitación</a>
-                <a href="#galeria" class="border border-white/20 hover:border-white/50 py-4 px-10 rounded-xl font-bold transition">Eleguir una Invitaciones</a>
+                <a href="#selector-invitaciones" class="btn-creative py-4 px-10">Prepará tu Invitación</a>
+                <a href="#galeria" class="border border-white/20 hover:border-white/50 py-4 px-10 rounded-xl font-bold transition">Ver Invitaciones</a>
             </div>
         </div>
     </section>
 
-    <!-- Colecciones -->
-    <section id="coleccion" class="py-32 relative">
+                                <!-- SELECTOR DE INVITACIONES   SELECTOR DE INVITACIONES    SELECTOR DE INVITACIONES -->
+
+    <section id="selector-invitaciones" class="py-32 relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Elige su invitación</h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Explorá tu invitación ideal</h2>
                 <div class="w-20 h-1 bg-gradient-canva mx-auto rounded-full"></div>  <br>
                 <p class="text-xl text-gray-500 mb-12 font-medium max-w-2xl mx-auto">
-                    Empezá a diseñarlo junto a nosotros! y transformar tu idea en una invitación digital.
+                    Cada celebración merece una invitación única. Empezá a crear la tuya con nosotros: cumpleaños, eventos y los mágicos 15 años.
                 </p>                    
             </div>
             
@@ -132,7 +141,8 @@
                     </div>
                 </div>
 
-                <!-- Eventos -->
+                                                            <!-- Eventos -->
+
                 <div class="glass-ui p-8 item-level-1 group" onclick="toggleDropdown(this, event)">
                     <div class="flex items-center justify-between mb-6 cursor-pointer">
                         <div class="flex items-center gap-4">
@@ -159,7 +169,8 @@
                     </div>
                 </div>
 
-                <!-- XV Años -->
+                                                            <!-- XV Años -->
+
                 <div class="bg-gradient-canva rounded-[32px] p-10 relative overflow-hidden group h-full">
                     <div class="relative z-10">
                         <div class="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-8">
@@ -174,7 +185,8 @@
         </div>
     </section>
 
-    <!-- Galería Restaurada -->
+                                                        <!-- Galería Restaurada -->
+
     <section id="galeria" class="py-24 bg-white/5">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-extrabold mb-12 text-center">Nuestras plantillas unicas.</h2>
@@ -187,7 +199,8 @@
         </div>
     </section>
 
-    <!-- Testimonios Restaurados -->
+                                                <!-- Testimonios Restaurados -->
+
     <section id="testimonios" class="py-24 bg-white/5">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-extrabold mb-12 text-center">Opiniones y reseñas de Clientes</h2>
@@ -211,7 +224,8 @@
         </div>
     </section>
 
-    <!-- FAQ Expandido -->
+                                                        <!-- FAQ Expandido -->
+
     <section id="faq" class="py-24">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-extrabold mb-12 text-center">Preguntas Frecuentes</h2>
@@ -248,7 +262,8 @@
         </div>
     </section>
 
-    <!-- Footer Original -->
+                                                                <!-- Footer Original -->
+
     <footer id="contacto" class="py-20 border-t border-white/5">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
