@@ -259,8 +259,8 @@ body {
   .logo-footer{
     background: black;    
     background: linear-gradient(45deg, #151a42, #0f111a, #091d21);
-    height: 60px;
-    width: 60px;
+    height: ;
+    width: auto;
     padding: 4px 8px 4px 8px;
     border-radius: 13px;
     margin: 0 0 0 0;
