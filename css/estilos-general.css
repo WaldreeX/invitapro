@@ -232,16 +232,16 @@ body {
     font-size: 1.2rem;    
     letter-spacing: 1px;
   }
-  .border-2 {/*BOTON DE EVENTOS "consultar mas"*/
+  .border-2 {/*BOTON DE EVENTOS "consultar mas!!"*/
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-    margin: 0;
-    font-size: 1.2rem;    
+    height: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     letter-spacing: 1px;
-    background: var(--canva-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border-radius: 22px;
+    border: 1px solid #1d414e;
+    background: #1d414e;
   }
   .card, .glass-ui {
     width: 100%;
@@ -252,5 +252,39 @@ body {
     bottom: 15px;
     right: 15px;
   }
+
+
+  /* FOOTER   FOOTER    FOOTER  */
+
+  .logo-footer{
+    background: black;    
+    background: linear-gradient(45deg, #151a42, #0f111a, #091d21);
+    height: 60px;
+    width: 60px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 13px;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .text-logo-footer-1{
+    padding: 0;
+    margin: -10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300; 
+    font-size: 27px;
+    letter-spacing: 1px;
+  }  
+  .text-logo-footer-2 { /*COLOR DEGRADADO DEL TITULO PRINCIPAL*/
+    background: var(--canva-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0;
+    margin: -3px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700; 
+    font-size: 27px;
+}
 }
 
