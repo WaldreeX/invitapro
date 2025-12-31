@@ -142,8 +142,8 @@ body {
   .logo{
     background: black;    
     background: linear-gradient(45deg, #151a42, #0f111a, #091d21);
-    height: 55px;
-    width: 55px;
+    height: 60px;
+    width: 60px;
     padding: 4px 8px 4px 8px;
     border-radius: 13px;
     margin: 0 6px 0 0;
@@ -244,14 +244,19 @@ body {
     border: 1px solid #1d414e;
     background: #1d414e;
   }
+  .w-full-img{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+  }
   .card, .glass-ui {
     width: 100%;
     border-radius: 22px;
-    padding: 12px;
+    padding: 7px;
   }
   .whatsapp-float {
-    bottom: 15px;
-    right: 15px;
+    bottom: 25px;
+    right: 28px;
   }
 
 
